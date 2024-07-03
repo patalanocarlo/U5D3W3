@@ -51,5 +51,21 @@ public class Runner {
         System.out.println("Numero totale di pagine del libro: " + totalPagine);
         System.out.println("Nomi autori" + libro.getAutori());
 
+        Tenente tenente = new Tenente();
+        Capitano capitano = new Capitano();
+        Maggiore maggiore = new Maggiore();
+        Colonnello colonnello = new Colonnello();
+        Generale generale = new Generale();
+
+
+        tenente.setResponsabile(capitano);
+        capitano.setResponsabile(maggiore);
+        maggiore.setResponsabile(colonnello);
+        colonnello.setResponsabile(generale);
+
+
+        int importo = 3500;
+        System.out.println("Verifica quale ufficiale percepisce almeno " + importo + " euro:");
+        tenente.verificaStipendio(importo);
     }
 }
